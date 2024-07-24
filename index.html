@@ -353,11 +353,25 @@
                             <label for="message">your message</label>
                             <small class="errorMsg">Error message</small>
                         </div>
+
+                        <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+
                         <div class="submit">
                             <input class="btn contact-btn" type="submit" value="send message" id="form_button">
                         </div>
                     </form>
                 </div>
+                <script
+                    src="https://www.google.com/recaptcha/api.js?render=6LexqxcqAAAAAH-1pQrQF9-4ViOUy5Ed89R7Vrtg"></script>
+                <script>
+                    grecaptcha.ready( function()
+                    {
+                        grecaptcha.execute( '6LexqxcqAAAAAH-1pQrQF9-4ViOUy5Ed89R7Vrtg', { action: 'submit' } ).then( function( token )
+                        {
+                            document.getElementById( 'g-recaptcha-response' ).value = token;
+                        } );
+                    } );
+                </script>
             </div>
         </section>
         <!-- end of contact section -->
