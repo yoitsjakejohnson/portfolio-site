@@ -332,6 +332,10 @@
 
                 <div class="contact-form">
                     <form action="include/contact-form.php" method="post" id="contact_form">
+                        <!-- Hidden honeypot field -->
+                        <div style="display:none;">
+                            <input type="text" name="honeypot" id="honeypot">
+                        </div>
                         <div class="user-info">
                             <div class="user-box">
                                 <input type="text" name="name" id="name">
